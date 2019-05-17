@@ -1,0 +1,24 @@
+<div class="container container-fluid">
+<h1 class="display-2 centered">Contact Me</h1>
+<hr class="centered"/>
+<div class="contact-spacer-bottom"></div>
+<form class="centered">
+  <div class="form-group">
+    <label for="emailInputField">Email address</label>
+    <input name="emailField" type="email" class="form-control" id="emailInputField" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="emailField">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="subjectInputField">Subject</label>
+    <input name="subjectField" type="text" class="form-control" id="subjectInputField" aria-describedby="subjectHelp" placeholder="Subject" [(ngModel)]="subjectField">
+    <small id="subjectHelp" class="form-text text-muted">Please put a small description of your message here.</small>
+  </div>
+  <div class="form-group">
+  	<label for="msgInputField">Message</label>
+  	<textarea name="messageField" rows="8" class="form-control" id="msgInputField" placeholder="Message" aria-describedby="msgHelp" [(ngModel)]="messageField"></textarea>
+  	<small id="msgHelp" class="form-text text-muted">Enter your message to me here.</small>
+  </div>
+  <button name="sendContactForm" type="button" class="btn btn-primary" (click)="sendMessage()">Submit</button>
+</form>
+<div class="contact-spacer-bottom"></div>
+</div>

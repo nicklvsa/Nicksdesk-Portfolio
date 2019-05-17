@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <a draggable="false" class="navbar-brand navbar-title-styler" routerLink="">Nick's Desk</a>
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="resume">Resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="philosophy">Philosophy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="skills">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">Contact</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
+        <div class="dropdown-menu" aria-labelledby="account_dd" ngbDropdownMenu>
+          <a class="dropdown-item" routerLink="login">Login</a>
+          <a class="dropdown-item" routerLink="register">Register</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="spacer-header"></div>
