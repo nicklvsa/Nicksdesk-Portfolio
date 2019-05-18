@@ -13,6 +13,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+	{path: '**', redirectTo: '/'},
 	{path: '', component: HomeComponent},
 	{path: 'about', component: AboutComponent},
 	{path: 'login', component: LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
 	{path: 'contact', component: ContactComponent},
 	{path: 'philosophy', component: PhilosophyComponent},
 	{path: 'dashboard', component: DashboardComponent}
+	
 ];
 
 @NgModule({
