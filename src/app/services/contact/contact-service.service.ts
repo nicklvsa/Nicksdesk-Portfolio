@@ -27,3 +27,8 @@ export class ContactServiceService {
   	return this.http.post<ContactData>(contactRequest, data).pipe(catchError(err.handleError));
   }
 }
+
+//testing abstract interface exporting
+export abstract class ContactServiceServiceAbs {
+  abstract getContactData(): ContactData[];
+}
