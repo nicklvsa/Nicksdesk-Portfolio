@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import * as rxjs from 'rxjs';
 
 //bootstrap modules
@@ -23,6 +26,16 @@ import { HomeComponent } from './home/home.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyByxkU14gf477xZonBHMOIM_3Kq36Lkmag",
+  authDomain: "nicks-desk-portfolio.firebaseapp.com",
+  databaseURL: "https://nicks-desk-portfolio.firebaseio.com",
+  projectId: "nicks-desk-portfolio",
+  storageBucket: "nicks-desk-portfolio.appspot.com",
+  messagingSenderId: "574268946287",
+  appId: "1:574268946287:web:986e796f20b8a045"
+};
 
 @NgModule({
   declarations: [
@@ -46,7 +59,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
