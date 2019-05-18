@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
 	constructor(private authService: AuthService, private router: Router, public funcs: FuncsService) {
 		if(!authService.isLoggedIn) {
-			funcs.delay(2000).then(any => {
+			funcs.delay(2500).then(any => {
 				router.navigate(['/login']);
 			});
 		}
