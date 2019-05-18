@@ -1,6 +1,12 @@
-<div class="container-fluid">
+<div *ngIf="authService.isLoggedIn; else nouser" class="container-fluid">
 	<div class="container">
 		<h1 class="display-2 centered">Dashboard</h1>
 	</div>
 	<hr class="centered"/>
 </div>
+
+<ng-template #nouser>
+	<div class="centered container">
+		<h3 class="display-2 centered">You are not logged in! Redirecting you to login...</h3>
+	</div>
+</ng-template>
