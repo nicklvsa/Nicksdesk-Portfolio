@@ -12,6 +12,12 @@
 	cursor: pointer;
 }
 
+@media screen and (max-height: 768px) {
+	.spacer-header {
+		padding-bottom:100px;
+	}
+}
+
 .spacer-header {
 	padding-bottom:150px;
 }
