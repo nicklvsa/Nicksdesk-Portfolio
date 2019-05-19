@@ -73,11 +73,11 @@
 }
 
 .form-label-group input::-moz-placeholder {
-  color: transparent;
+	color: transparent;
 }
 
 .form-label-group input::placeholder {
-  color: transparent;
+	color: transparent;
 }
 
 .form-label-group input::not(:placeholder-shown) {
@@ -86,8 +86,22 @@
 }
 
 .form-label-group input:not(:placeholder-shown)~label {
-  padding-top: calc(var(--input-padding-y) / 3);
-  padding-bottom: calc(var(--input-padding-y) / 3);
-  font-size: 12px;
-  color: #777;
+	padding-top: calc(var(--input-padding-y) / 3);
+	padding-bottom: calc(var(--input-padding-y) / 3);
+	font-size: 12px;
+	color: #777;
+}
+
+.btn-google {
+	color: white;
+	background-color: #ea4335;
+}
+
+#login-btn {
+	font-size: 12px;
+}
+
+.fa-google {
+	text-align: center;
+	font-size: 25px;
 }

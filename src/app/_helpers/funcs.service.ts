@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FuncsService {
+	
  	constructor() {}
 
 	async delay(time: number) {
-		await new Promise(resolve => setTimeout(()=>resolve(), time)).then(()=>console.log("pause finished!"));
+		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
 	}
 }
