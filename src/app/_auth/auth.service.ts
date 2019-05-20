@@ -32,6 +32,24 @@ export class AuthService {
 		}
 	}
 
+	async loginWithGoogle() {
+		try {
+			await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+			this.router.navigate(['/dashboard']);
+		} catch(e) {
+			console.log(e.message);
+		}
+	}
+
+	async loginWithTwitter() {
+		try {
+			await this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+			this.router.navigate(['/dashboard']);
+		} catch(e) {
+			console.log(e.message);
+		}
+	}
+
 	async logout() {
 		await this.afAuth.auth.signOut();
 		localStorage.removeItem('user');
