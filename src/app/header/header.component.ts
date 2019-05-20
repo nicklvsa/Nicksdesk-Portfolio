@@ -11,12 +11,15 @@ export class HeaderComponent implements OnInit {
 
   isNavbarCollapsed: boolean = true;
 
-  constructor(private authService: AuthService, private funcs: FuncsService) {}
+  constructor(private authService: AuthService, private funcs: FuncsService) {
+    //is_not_mobile not returning correct value
+    console.log(funcs.isNotMobile());
+  }
 
   ngOnInit() {}
 
   logout() {
     this.authService.logout();
   }
-  
+
 }
