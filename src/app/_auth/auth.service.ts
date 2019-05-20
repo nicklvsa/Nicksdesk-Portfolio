@@ -61,5 +61,10 @@ export class AuthService {
 		return user !== null;
 	}
 
+	get getUserRecognizableIdentifier(): string {
+		//add return of user email or displayName
+		return "";
+	}
+
 
 }
