@@ -1,6 +1,13 @@
 <div *ngIf="authService.isLoggedIn; else nouser" class="container-fluid">
 	<div class="container">
-		<h1 class="display-2 centered">Dashboard</h1>
+		<div class="row justify-content-around">
+			<div class="col-xs-6">
+				<img draggable="false" src="{{ user_img }}" class="profile-image" alt="Profile image">
+			</div>
+			<div class="col-xs-6">
+				<h3 class="display-2 centered welcome-splash">Welcome, {{ user_str }}</h3>
+			</div>
+		</div>
 	</div>
 	<hr class="centered"/>
 </div>

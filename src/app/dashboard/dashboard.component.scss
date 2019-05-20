@@ -7,6 +7,16 @@
     animation-name: slidein;
 }
 
+.welcome-splash {
+	font-size: 45px;
+}
+
+.profile-image {
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+}
+
 @keyframes slidein {
 	from {
 		margin-left: 100%;
