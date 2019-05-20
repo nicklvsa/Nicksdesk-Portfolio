@@ -185,3 +185,9 @@
 .user-show-login-text-google {
 
 }
+
+@media screen and (max-width: 479px) {
+	.container {
+		padding-top: 55px;
+	}
+}

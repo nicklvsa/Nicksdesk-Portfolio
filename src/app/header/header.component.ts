@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_auth/auth.service';
+import { FuncsService } from '../_helpers/funcs.service';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,12 @@ export class HeaderComponent implements OnInit {
 
   isNavbarCollapsed: boolean = true;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private funcs: FuncsService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   logout() {
-  	this.authService.logout();
+    this.authService.logout();
   }
-
+  
 }
