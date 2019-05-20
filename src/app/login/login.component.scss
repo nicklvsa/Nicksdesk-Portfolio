@@ -129,11 +129,11 @@
 }
 
 #google-login-btn:hover {
-	box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.1);
 }
 
 #twitter-login-btn:hover {
-	box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .fa-twitter {
@@ -157,8 +157,7 @@
 	opacity: 0;
 	margin-right: auto;
 	margin-left: auto;
-	//fix arrow sizing
-	/*font-size: 50px;*/
+	font-size: 20px;
 }
 
 .user-show-login-twitter {
@@ -168,8 +167,7 @@
 	opacity: 0; 
 	margin-right: auto;
 	margin-left: auto;
-	//fix arrow sizing
-	/*font-size: 50px;*/
+	font-size: 20px;
 }
 
 #google-login-btn:hover .user-show-login-google {
