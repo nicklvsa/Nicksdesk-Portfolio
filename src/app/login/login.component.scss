@@ -92,16 +92,90 @@
 	color: #777;
 }
 
+.btn-google-spin .btn-spinner {
+	transition: 0.7s;
+	-webkit-transition: 0.7s;
+	-moz-transition: 0.7s;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn-google-spin:hover .btn-spinner {
+	transition: 0.7s;
+	-webkit-transition: 0.7s;
+	-moz-transition: 0.7s;
+	transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+}
+
 .btn-google {
 	color: white;
 	background-color: #ea4335;
 }
 
-#login-btn {
+.btn-twitter {
+	color: white;
+	background-color: #00aced;
+}
+
+#google-login-btn {
 	font-size: 12px;
+}
+
+#twitter-login-btn {
+	font-size: 12px;
+}
+
+.fa-twitter {
+	text-align: center;
+	font-size: 25px;
 }
 
 .fa-google {
 	text-align: center;
 	font-size: 25px;
+}
+
+.spacer {
+	padding-bottom: 35px;
+}
+
+.user-show-login-google {
+	transition: 0.7s;
+	-webkit-transition: 0.7s;
+	-moz-transition: 0.7s;
+	opacity: 0;
+	margin-right: auto;
+	margin-left: auto;
+	//fix arrow sizing
+	/*font-size: 50px;*/
+}
+
+.user-show-login-twitter {
+	transition: 0.7s;
+	-webkit-transition: 0.7s;
+	-moz-transition: 0.7s;
+	opacity: 0; 
+	margin-right: auto;
+	margin-left: auto;
+	//fix arrow sizing
+	/*font-size: 50px;*/
+}
+
+#google-login-btn:hover .user-show-login-google {
+	opacity: 1;
+}
+
+#twitter-login-btn:hover .user-show-login-twitter {
+	opacity: 1; 
+}
+
+.user-show-login-text-twitter {
+
+}
+
+.user-show-login-text-google {
+
 }

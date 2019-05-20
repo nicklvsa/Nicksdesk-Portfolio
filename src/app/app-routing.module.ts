@@ -13,7 +13,9 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+	//main routes
 	{path: '', component: HomeComponent},
+	{path: 'home', component: HomeComponent},
 	{path: 'about', component: AboutComponent},
 	{path: 'login', component: LoginComponent},
 	{path: 'register', component: RegisterComponent},
@@ -24,6 +26,7 @@ const routes: Routes = [
 	{path: 'philosophy', component: PhilosophyComponent},
 	{path: 'dashboard', component: DashboardComponent},
 
+	//detect invalid route
 	{path: '404', component: HomeComponent},
 	{path: '**', redirectTo: '404'}
 ];

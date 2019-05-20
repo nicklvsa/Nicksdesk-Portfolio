@@ -12,12 +12,36 @@
 	cursor: pointer;
 }
 
+.spacer-header {
+	padding-bottom:150px;
+}
+
+@media screen and (max-width: 479px) {
+	.navbar-collapse {
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+		max-height: 0;
+		display: block;
+		overflow: hidden;
+		opacity: 0;
+	}
+
+	.navbar-collapse.show {
+		max-height: 100%;
+		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 479px) {
+	.navbar-title-styler {
+		text-align:center;
+	}
+}
+
 @media screen and (max-height: 768px) {
 	.spacer-header {
 		padding-bottom:100px;
 	}
 }
 
-.spacer-header {
-	padding-bottom:150px;
-}
