@@ -23,8 +23,8 @@
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labelledby="account_dd" ngbDropdownMenu>
-          <a class="dropdown-item" routerLink="login">Login</a>
-          <a class="dropdown-item" routerLink="register">Register</a>
+          <a *ngIf="!authService.isLoggedIn; else showloggedin" class="dropdown-item" routerLink="login">Login</a>
+          <a *ngIf="!authService.isLoggedIn" class="dropdown-item" routerLink="register">Register</a>
         </div>
       </li>
       <li *ngIf="authService.isLoggedIn" class="nav-item">
@@ -34,3 +34,7 @@
   </div>
 </nav>
 <div class="spacer-header"></div>
+
+<ng-template #showloggedin>
+  <a class="dropdown-item" routerLink="dashboard">Your Dashboard</a>
+</ng-template>
