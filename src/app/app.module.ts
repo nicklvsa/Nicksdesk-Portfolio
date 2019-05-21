@@ -27,6 +27,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+//firebase configuration for auth
 const firebaseConfig = {
   apiKey: "AIzaSyByxkU14gf477xZonBHMOIM_3Kq36Lkmag",
   authDomain: "nicks-desk-portfolio.firebaseapp.com",
@@ -37,6 +38,7 @@ const firebaseConfig = {
   appId: "1:574268946287:web:986e796f20b8a045"
 };
 
+//main imports to be used throughout the portfolio
 @NgModule({
   declarations: [
     AppComponent,
