@@ -14,7 +14,7 @@ export class ResumeComponent implements OnInit {
 	ngOnInit() {}
 
 	open(content) {
-		this.modalService.open(content, {ariaLabelledBy: 'resume-modal-title', size: 'lg'});
+		this.modalService.open(content, {ariaLabelledBy: 'resume-modal-title', windowClass: 'modal-styler', size: 'lg'});
 	}
 
 }
