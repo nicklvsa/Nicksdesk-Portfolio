@@ -17,7 +17,7 @@
 }
 
 /* fix mobile dropdown animations */
-/*@media screen and (max-width: 479px) {
+@media screen and (max-width: 479px) {
 	.navbar-collapse {
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
@@ -32,7 +32,7 @@
 		max-height: 100%;
 		opacity: 1;
 	}
-}*/
+}
 
 @media screen and (min-width: 479px) {
 	.navbar-title-styler {
