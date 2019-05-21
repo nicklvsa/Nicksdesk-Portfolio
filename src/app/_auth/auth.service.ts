@@ -10,6 +10,8 @@ import { User } from 'firebase';
 })
 export class AuthService {
 
+	/* TODO: possibly add more sign in methods */
+
 	user: User;
 
 	constructor(public afAuth: AngularFireAuth, public router: Router) { 
@@ -65,6 +67,5 @@ export class AuthService {
 		//add return of user email or displayName
 		return "";
 	}
-
 
 }

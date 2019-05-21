@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private authService: AuthService, private funcs: FuncsService) {
     //is_not_mobile not returning correct value
-    console.log(funcs.isNotMobile());
+    console.log(funcs.isMobile());
   }
 
   ngOnInit() {}

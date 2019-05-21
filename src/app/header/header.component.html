@@ -20,7 +20,7 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="contact">Contact</a>
       </li>
-      <li class="nav-item dropdown" ngbDropdown *ngIf="funcs.isNotMobile">
+      <li class="nav-item dropdown" ngbDropdown *ngIf="!funcs.isMobile()">
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
           <a *ngIf="!authService.isLoggedIn; else showloggedin" class="dropdown-item" routerLink="login">Login</a>

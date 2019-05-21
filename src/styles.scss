@@ -13,3 +13,22 @@ router-outlet ~ * {
 .centered {
 	text-align:center;
 }
+
+.modal-anim {
+	animation-name: slide-modal;
+	animation-duration: 0.3s;
+}
+
+@keyframes slide-modal {
+	0% {
+		transform: scale(0.5)
+	}
+
+	75% {
+		transform: scale(1.1)
+	}
+
+	100% {
+		transform: scale(1.0)
+	}
+}
