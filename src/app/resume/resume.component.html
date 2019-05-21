@@ -1,3 +1,19 @@
-<p>
-  resume works!
-</p>
+<div class="container-fluid">
+	<div class="container col-md-6 ">
+		<h1 class="display-2 centered">My Resume</h1>
+		<h5 class="form-text text-muted slide-right">View my full resume <a (click)="!!open(content)" href="#" class="non-decoration">here</a></h5>
+	</div>
+	<hr class="centered"/>
+</div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="resume-modal-title">Full Resume</h4>
+		<button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<object type="application/pdf" data="https://nicksdesk.com/beta/full_resume.pdf" class="full-resume-pdf"></object>
+	</div>
+</ng-template>

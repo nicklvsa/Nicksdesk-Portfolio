@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor() { }
+	constructor(private modalService: NgbModal) {}
 
-  ngOnInit() {
-  }
+	ngOnInit() {}
+
+	open(content) {
+		this.modalService.open(content, {ariaLabelledBy: 'resume-modal-title', size: 'lg'});
+	}
 
 }
