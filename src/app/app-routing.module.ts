@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ResumeComponent } from './resume/resume.component';
 import { SkillsComponent } from './skills/skills.component';
+import { WorkComponent } from './work/work.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
 	{path: 'contact', component: ContactComponent},
 	{path: 'philosophy', component: PhilosophyComponent},
 	{path: 'dashboard', component: DashboardComponent},
+	{path: 'work', component: WorkComponent},
 
 	//detect invalid route
 	{path: '404', component: HomeComponent},

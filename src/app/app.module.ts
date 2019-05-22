@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WorkComponent } from './work/work.component';
 
 //firebase configuration for auth
 const firebaseConfig = {
@@ -53,7 +54,8 @@ const firebaseConfig = {
     HomeComponent,
     PhilosophyComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule,

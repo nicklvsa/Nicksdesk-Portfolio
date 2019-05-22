@@ -8,6 +8,7 @@ import { User } from 'firebase';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
 	/* TODO: possibly add more sign in methods */
@@ -64,8 +65,8 @@ export class AuthService {
 	}
 
 	get getUserRecognizableIdentifier(): string {
-		//add return of user email or displayName
-		return "";
+		//really long string to find a value to indentify logged in user
+		return (JSON.parse(localStorage.getItem("user")) !== null && JSON.parse(localStorage.getItem("user")).email !== null && JSON.parse(localStorage.getItem("user")).email !== "") ? JSON.parse(localStorage.getItem("user")).email : JSON.parse(localStorage.getItem("user")).displayName;
 	}
 
 }

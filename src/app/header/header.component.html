@@ -15,10 +15,14 @@
         <a class="nav-link" routerLink="philosophy">Philosophy</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="skills">Skills</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" routerLink="contact">Contact</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Experience</a>
+        <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
+          <a class="dropdown-item" routerLink="skills">Skills</a>
+          <a class="dropdown-item" routerLink="work">Work</a>
+        </div>
       </li>
       <li class="nav-item dropdown" ngbDropdown *ngIf="!funcs.isMobile()">
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
@@ -28,7 +32,7 @@
         </div>
       </li>
       <li *ngIf="authService.isLoggedIn" class="nav-item">
-        <a class="nav-link" (click)="logout()">Logout</a>
+        <a class="nav-link logout-hover" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>
