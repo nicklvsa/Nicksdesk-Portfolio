@@ -1,7 +1,21 @@
-.container {
+:host-context(.spacer-header) .img-container {
+	display: none;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding: 0;
+}
+
+/*.container {
 	height: 70rem;
 	background-image: url('https://nicksdesk.com/beta/images/nick_gerancher.jpg');
 	background-position: 25% 15%;
 	max-height: 100%;
 	max-width: 100%;
+}*/
+
+.img-container {
+	background: url('https://nicksdesk.com/beta/images/nick_gerancher.jpg') no-repeat;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
 }

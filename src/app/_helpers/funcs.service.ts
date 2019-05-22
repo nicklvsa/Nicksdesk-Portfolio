@@ -3,12 +3,23 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FuncsService {
+
+	private shouldDisplayHeaderPadding: boolean = true;
 
  	constructor() {}
 
 	async delay(time: number) {
 		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
+	}
+
+	setDisplayHeaderPadding(should: boolean) {
+		this.shouldDisplayHeaderPadding = should;
+	}
+
+	getDisplayHeaderPadding(): boolean {
+		return this.shouldDisplayHeaderPadding;
 	}
 
 	//fix mobile check

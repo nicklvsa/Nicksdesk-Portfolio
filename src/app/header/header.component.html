@@ -40,7 +40,7 @@
     </ul>
   </div>
 </nav>
-<div class="spacer-header"></div>
+<div *ngIf="funcs.getDisplayHeaderPadding()" class="spacer-header"></div>
 
 <ng-template #showloggedin>
   <a class="dropdown-item" routerLink="dashboard">My Desk</a>
