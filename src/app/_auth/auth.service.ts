@@ -53,6 +53,16 @@ export class AuthService {
 		}
 	}
 
+	//possibly implement
+	/*async loginWithGithub() {
+		try {
+			await this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
+			this.router.navigate(['/dashboard']);
+		} catch(e) {
+			console.log(e.message);
+		}
+	}*/
+
 	async logout() {
 		await this.afAuth.auth.signOut();
 		localStorage.removeItem('user');
