@@ -11,6 +11,8 @@ import { User } from 'firebase';
 
 export class AuthService {
 
+	//check user token validity
+
 	/* TODO: possibly add more sign in methods */
 
 	user: User;
