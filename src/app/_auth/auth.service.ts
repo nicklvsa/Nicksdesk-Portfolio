@@ -53,7 +53,7 @@ export class AuthService {
 		}
 	}
 
-	//possibly implement
+	//possibly implement in the future
 	/*async loginWithGithub() {
 		try {
 			await this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
