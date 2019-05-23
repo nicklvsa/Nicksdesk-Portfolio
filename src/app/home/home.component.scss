@@ -1,9 +1,5 @@
-.img-container {
-	background: url('/assets/landing_background.jpg') no-repeat;
-	max-height: 75%;
-	min-height: 50%;
-	height: 55%;
-	width: 100%;
+html, body {
+	height: 100%;
 }
 
 .home-title-anim {
@@ -70,7 +66,37 @@
 	animation-duration: 2s;
 }
 
-@media screen and(max-height: 768px) {
+.jumbotron {
+	background-image: url('/assets/landing_background.jpg');
+	/*max-height: 75%;
+	min-height: 50%;
+	max-width: 999999px;*/
+	width: 100%;
+
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	margin: 0;
+}
+
+@media screen and (max-width: 1250px) {
+	.img-container {
+		/*background: url('/assets/landing_background.jpg') no-repeat center center;
+		max-height: 75%;
+		min-height: 50%;
+		max-width: 2000px;
+		height: 55%;
+		width: auto;
+		background-size: cover;*/
+		background: none;
+	}
+}
+
+@media screen and (max-height: 768px) {
 	.img-container {
 		background: url('/assets/landing_background.jpg') no-repeat;
 		max-height: 75%;
