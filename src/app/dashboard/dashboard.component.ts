@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
 	user_img: string = "";
 
 	constructor(private authService: AuthService, private router: Router, public funcs: FuncsService) {
+		funcs.setDisplayFooter(true);
 		let raw: any = JSON.parse(localStorage.getItem("user"));
 		if(!authService.isLoggedIn) {
 			funcs.delay(2500).then(any => {

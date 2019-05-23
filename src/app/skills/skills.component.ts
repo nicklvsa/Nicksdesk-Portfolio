@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FuncsService } from '../_helpers/funcs.service';
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private funcs: FuncsService) { 
+  	funcs.setDisplayFooter(true);
+  }
 
   ngOnInit() {
   }

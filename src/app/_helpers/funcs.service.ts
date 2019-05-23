@@ -7,11 +7,20 @@ import { Injectable } from '@angular/core';
 export class FuncsService {
 
 	private shouldDisplayHeaderPadding: boolean = true;
+	private shouldDisplayFooter: boolean = true;
 
  	constructor() {}
 
 	async delay(time: number) {
 		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
+	}
+
+	setDisplayFooter(should: boolean) {
+		this.shouldDisplayFooter = should;
+	}
+
+	getDisplayFooter(): boolean {
+		return this.shouldDisplayFooter;
 	}
 
 	setDisplayHeaderPadding(should: boolean) {

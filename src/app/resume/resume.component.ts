@@ -14,6 +14,7 @@ export class ResumeComponent implements OnInit {
 
 	constructor(private modalService: NgbModal, private funcs: FuncsService) {
 		console.log(funcs.isMobile() ? "mobile" : "desktop");
+		funcs.setDisplayFooter(true);
 	}
 
 	ngOnInit() {}

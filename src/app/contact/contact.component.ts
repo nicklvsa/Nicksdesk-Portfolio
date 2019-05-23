@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ContactServiceService } from '../services/contact/contact-service.service';
+import { FuncsService } from '../_helpers/funcs.service';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -24,7 +25,9 @@ export class ContactComponent implements OnInit {
   messageField: string = "";
 
   //https://angular.io/guide/http
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private funcs: FuncsService) {
+    funcs.setDisplayFooter(true);
+  }
 
   ngOnInit() {}
 
