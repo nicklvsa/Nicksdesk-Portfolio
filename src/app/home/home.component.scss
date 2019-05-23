@@ -1,9 +1,108 @@
+.img-container {
+	background: url('/assets/landing_background.jpg') no-repeat;
+	max-height: 75%;
+	min-height: 50%;
+	height: 55%;
+	width: 100%;
+}
+
+.home-title-anim {
+	animation-name: slidein-title;
+	animation-duration: 2s;
+}
+
+.slide-right-anim {
+	animation-name: slidein-title;
+	animation-duration: 2s;
+}
+
+.row-to {
+	font-weight: bold;
+	color: #007BFF;
+}
+
+.row-to:hover {
+	color: #093BB0;
+	text-decoration: none;
+}
+
+.bg-image {
+	background-color: #E5E8E8;
+	height: 100%;
+}
+
+.row-padded {
+	padding-top: 3rem;
+}
+
+.padded {
+	padding-top: 6rem;
+}
+
 .slide-right {
+	font-weight: bold;
 	font-style: italic;
 	text-align: right;
 }
 
-.home-spacer-bottom {
-	padding-bottom: 25px;
+.home-title-styler {
+	color: white;
+	font-weight: bold;
 }
 
+.home-spacer-bottom {
+	padding-bottom: 50px;
+}
+
+.slide-web {
+	animation-name: squash-web;
+	animation-duration: 2s;
+}
+
+.slide-dev {
+	animation-name: squash-dev;
+	animation-duration: 2s;
+}
+
+.slide-software {
+	animation-name: squash-software;
+	animation-duration: 2s;
+}
+
+@keyframes slidein-title {
+	from {
+		margin-left: 100%;
+		width: 300%; 
+	}
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+@keyframes squash-web {
+	from {
+		height: 100%;
+	}
+	to {
+		height: 26%;
+	}
+}
+
+@keyframes squash-dev {
+	from {
+		height: 300%;
+	}
+	to {
+		height: 26%;
+	}
+}
+
+@keyframes squash-software {
+	from {
+		height: 200%;
+	}
+	to {
+		height: 26%;
+	}
+}

@@ -11,10 +11,10 @@ import { FuncsService } from '../_helpers/funcs.service';
 export class HomeComponent implements OnInit {
 
   constructor(private funcs: FuncsService) { 
-  	funcs.setDisplayFooter(false);
+	funcs.setDisplayFooter(false);
+  	funcs.setDisplayHeaderPadding(false);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

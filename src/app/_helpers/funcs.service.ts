@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 
 export class FuncsService {
@@ -12,6 +12,7 @@ export class FuncsService {
  	constructor() {}
 
 	async delay(time: number) {
+		//remove log eventually
 		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
 	}
 
@@ -31,7 +32,6 @@ export class FuncsService {
 		return this.shouldDisplayHeaderPadding;
 	}
 
-	//fix mobile check
 	isMobile(): boolean {
  		return (
  			/Android/i.test(navigator.userAgent)

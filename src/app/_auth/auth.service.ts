@@ -6,7 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 
 @Injectable({
-  providedIn: 'root'
+ 	providedIn: 'root'
 })
 
 export class AuthService {

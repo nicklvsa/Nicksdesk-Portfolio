@@ -10,6 +10,7 @@ import { FuncsService } from '../_helpers/funcs.service';
 export class WorkComponent implements OnInit {
 
   constructor(private funcs: FuncsService) { 
+  	funcs.setDisplayHeaderPadding(true);
   	funcs.setDisplayFooter(true);
   }
 

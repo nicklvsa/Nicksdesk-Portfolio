@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
 
 	constructor(private authService: AuthService, private router: Router, public funcs: FuncsService) {
 		funcs.setDisplayFooter(true);
+		funcs.setDisplayHeaderPadding(true);
 		let raw: any = JSON.parse(localStorage.getItem("user"));
 		if(!authService.isLoggedIn) {
 			funcs.delay(2500).then(any => {

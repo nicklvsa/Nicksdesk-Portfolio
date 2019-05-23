@@ -27,6 +27,7 @@ export class ContactComponent implements OnInit {
   //https://angular.io/guide/http
   constructor(private http: HttpClient, private funcs: FuncsService) {
     funcs.setDisplayFooter(true);
+    funcs.setDisplayHeaderPadding(true);
   }
 
   ngOnInit() {}

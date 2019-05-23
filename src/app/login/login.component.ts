@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 	password: string = "";
 
 	constructor(private authService: AuthService, private funcs: FuncsService) {
+		funcs.setDisplayHeaderPadding(true);
 		funcs.setDisplayFooter(true);
 	}
 
