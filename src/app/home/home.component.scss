@@ -27,6 +27,7 @@
 }
 
 .bg-image {
+	max-height: 500%;
 	background-color: #E5E8E8;
 	height: 100%;
 }
@@ -67,6 +68,24 @@
 .slide-software {
 	animation-name: squash-software;
 	animation-duration: 2s;
+}
+
+@media screen and(max-height: 768px) {
+	.img-container {
+		background: url('/assets/landing_background.jpg') no-repeat;
+		max-height: 75%;
+		min-height: 50%;
+		height: 65%;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.bg-image {
+		max-height: 500%;
+		background-color: #E5E8E8;
+		height: 250%;
+	}
 }
 
 @keyframes slidein-title {
