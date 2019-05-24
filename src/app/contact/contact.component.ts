@@ -34,6 +34,8 @@ export class ContactComponent implements OnInit {
   sendMessage() {
   	let data: ContactData = {subject: this.subjectField, message: this.messageField, email: this.emailField};
     if(this.subjectField != "" && this.messageField != "" && this.emailField != "") {
+      //some reaons .then will not fire after addContact is called
+      //could be async issue but idk rn
       this.auth.addContact(data).then((res) => {
         console.log(res);
         //add contact form sent success modal
