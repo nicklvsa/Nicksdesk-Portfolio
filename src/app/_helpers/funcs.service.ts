@@ -32,6 +32,16 @@ export class FuncsService {
 		return this.shouldDisplayHeaderPadding;
 	}
 
+	//fix localStorage on mobile
+	/*getLocalStorageItemMobile(): string {
+
+		if(this.isMobile()) {
+
+		}
+
+		return null;
+	}*/
+
 	isMobile(): boolean {
  		return (
  			/Android/i.test(navigator.userAgent)

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-
 import { Router } from '@angular/router';
+
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+
 import { User } from 'firebase';
 
 export interface ContactData {
@@ -78,7 +79,7 @@ export class AuthService {
 		this.router.navigate(['/login']);
 	}
 
-	addContact(data: ContactData) {
+	/* possible async so await can be used */ addContact(data: ContactData) {
 		return new Promise<any>((response, reject) => {
 			this.store.collection("contact").add(data).then(res => {
 				console.log(res);
