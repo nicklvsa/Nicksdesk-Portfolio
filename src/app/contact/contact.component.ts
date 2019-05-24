@@ -19,6 +19,7 @@ export interface ContactData {
 
 export class ContactComponent implements OnInit {
 
+  //ngModels - direct relation to inputs
   emailField: string;
   subjectField: string;
   messageField: string;
@@ -33,7 +34,7 @@ export class ContactComponent implements OnInit {
   sendMessage() {
   	let data: ContactData = {subject: this.subjectField, message: this.messageField, email: this.emailField};
     if(this.subjectField != "" && this.messageField != "" && this.emailField != "") {
-      this.auth.addContact(data).then(res => {
+      this.auth.addContact(data).then((res) => {
         console.log(res);
         //add contact form sent success modal
         this.subjectField = '';
