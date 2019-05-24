@@ -35,12 +35,13 @@ export class ContactComponent implements OnInit {
     if(this.subjectField != "" && this.messageField != "" && this.emailField != "") {
       this.auth.addContact(data).then(res => {
         console.log(res);
+        //add contact form sent success modal
         this.subjectField = '';
         this.messageField = '';
         this.emailField = '';
       });
     } else {
-      
+      //add error modal open code
     }
     
   }
