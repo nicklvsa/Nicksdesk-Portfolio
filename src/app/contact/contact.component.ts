@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
 import { FuncsService } from '../_helpers/funcs.service';
 import { AuthService } from '../_auth/auth.service';
 
@@ -24,20 +26,25 @@ export class ContactComponent implements OnInit {
   subjectField: string;
   messageField: string;
 
-  constructor(private funcs: FuncsService, private auth: AuthService) {
+  constructor(private modal: NgbModal, private funcs: FuncsService, private auth: AuthService) {
     funcs.setDisplayFooter(true);
     funcs.setDisplayHeaderPadding(true);
   }
 
   ngOnInit() {}
 
+  showErrModal(errmodal) {
+    this.modal.open(errmodal, {ariaLabelledBy: 'home-modal-err'});
+  }
+
+  showSuccessModal(successmodal) {
+    this.modal.open(successmodal, {ariaLabelledBy: 'home-modal-success'});
+  }  
+
   sendMessage() {
   	let data: ContactData = {subject: this.subjectField, message: this.messageField, email: this.emailField};
     if(this.subjectField != "" && this.messageField != "" && this.emailField != "") {
-      //some reaons .then will not fire after addContact is called
-      //could be async issue but idk rn
       this.auth.addContact(data).then((res) => {
-        console.log(res);
         //add contact form sent success modal
         this.subjectField = '';
         this.messageField = '';

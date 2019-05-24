@@ -82,6 +82,9 @@ export class AuthService {
 		return new Promise<any>((response, reject) => {
 			this.store.collection("contact").add(data).then(res => {
 				console.log(res);
+				return response();
+			}).catch((e) => {
+				console.log(e);
 			});
 		});
 	}

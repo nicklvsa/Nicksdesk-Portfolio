@@ -69,8 +69,9 @@ html, body {
 
 .jumbotron {
 	background-image: url('/assets/landing_background.jpg');
+	border-radius: 0;
+	min-height: 45%;
 	width: 100%;
-
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
