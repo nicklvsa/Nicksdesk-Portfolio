@@ -7,6 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 
+import { KonamiModule } from 'ngx-konami';
+
 import * as rxjs from 'rxjs';
 
 //bootstrap modules
@@ -67,7 +69,8 @@ const firebaseConfig = {
     NgbModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    KonamiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
