@@ -17,7 +17,6 @@ export class AboutComponent implements OnInit {
   		funcs.setDisplayFooter(true);
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 }
