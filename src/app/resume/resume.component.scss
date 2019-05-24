@@ -3,6 +3,18 @@
 	text-align: right;
 }
 
+.txt-indent {
+	text-indent: 20px;
+}
+
+.slanted {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
 .non-decoration {
 	text-decoration: none;
 }
@@ -20,3 +32,10 @@
 	height: 50%;
 }
 
+.padder {
+	padding-bottom: 5rem;
+}
+
+.padder-from-summary {
+	padding-top: 2rem;
+}

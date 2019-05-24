@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ContactServiceService } from '../services/contact/contact-service.service';
 import { FuncsService } from '../_helpers/funcs.service';
+import { AuthService } from '../_auth/auth.service';
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 export interface ContactData {
-	subject: string;
-	email: string;
-	message: string;
+  subject: string;
+  email: string;
+  message: string;
 }
 
 @Component({
@@ -20,12 +19,11 @@ export interface ContactData {
 
 export class ContactComponent implements OnInit {
 
-  emailField: string = "";
-  subjectField: string = "";
-  messageField: string = "";
+  emailField: string;
+  subjectField: string;
+  messageField: string;
 
-  //https://angular.io/guide/http
-  constructor(private http: HttpClient, private funcs: FuncsService) {
+  constructor(private funcs: FuncsService, private auth: AuthService) {
     funcs.setDisplayFooter(true);
     funcs.setDisplayHeaderPadding(true);
   }
@@ -33,9 +31,18 @@ export class ContactComponent implements OnInit {
   ngOnInit() {}
 
   sendMessage() {
-  	let contactService: ContactServiceService = new ContactServiceService(this.http);
-  	let contact: ContactData = {subject: this.subjectField, email: this.emailField, message: this.messageField};
-  	contactService.sendContactForm(contact);
+  	let data: ContactData = {subject: this.subjectField, message: this.messageField, email: this.emailField};
+    if(this.subjectField != "" && this.messageField != "" && this.emailField != "") {
+      this.auth.addContact(data).then(res => {
+        console.log(res);
+        this.subjectField = '';
+        this.messageField = '';
+        this.emailField = '';
+      });
+    } else {
+      
+    }
+    
   }
 
 }

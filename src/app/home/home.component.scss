@@ -37,6 +37,7 @@ html, body {
 }
 
 .slide-right {
+	color: #FFFFFF;
 	font-weight: bold;
 	font-style: italic;
 	text-align: right;
@@ -68,9 +69,6 @@ html, body {
 
 .jumbotron {
 	background-image: url('/assets/landing_background.jpg');
-	/*max-height: 75%;
-	min-height: 50%;
-	max-width: 999999px;*/
 	width: 100%;
 
 	-webkit-background-size: cover;
@@ -81,19 +79,6 @@ html, body {
   	background-position: center;
   	background-repeat: no-repeat;
   	margin: 0;
-}
-
-@media screen and (max-width: 1250px) {
-	.img-container {
-		/*background: url('/assets/landing_background.jpg') no-repeat center center;
-		max-height: 75%;
-		min-height: 50%;
-		max-width: 2000px;
-		height: 55%;
-		width: auto;
-		background-size: cover;*/
-		background: none;
-	}
 }
 
 @media screen and (max-height: 768px) {

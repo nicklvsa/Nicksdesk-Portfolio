@@ -3,7 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
+
+export interface ContactData {
+  subject: string;
+  email: string;
+  message: string;
+}
 
 @Injectable({
  	providedIn: 'root'
@@ -17,7 +24,7 @@ export class AuthService {
 
 	user: User;
 
-	constructor(public afAuth: AngularFireAuth, public router: Router) { 
+	constructor(public afAuth: AngularFireAuth, private store: AngularFirestore, public router: Router) { 
 		this.afAuth.authState.subscribe(user => {
 			if(user) {
 				this.user = user;
@@ -69,6 +76,14 @@ export class AuthService {
 		await this.afAuth.auth.signOut();
 		localStorage.removeItem('user');
 		this.router.navigate(['/login']);
+	}
+
+	addContact(data: ContactData) {
+		return new Promise<any>((response, reject) => {
+			this.store.collection("contact").add(data).then(res => {
+				console.log(res);
+			});
+		});
 	}
 
 	get isLoggedIn(): boolean {
