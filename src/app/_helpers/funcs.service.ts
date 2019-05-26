@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Injectable, NgZone } from '@angular/core';
+
+import { RxSpeechRecognitionService, resultList } from '@kamiazya/ngx-speech-recognition';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,11 +12,28 @@ export class FuncsService {
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
 
- 	constructor() {}
+	memeMessage: string = "";
+
+ 	constructor(public speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {}
 
 	async delay(time: number) {
 		//remove log eventually
 		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
+	}
+
+	listen() {
+		this.speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
+			this.memeMessage = list.item(0).item(0).transcript;
+			console.log(this.memeMessage);
+			if(this.memeMessage.toLowerCase().indexOf("i am silly") > -1) {
+				console.log("SECRET");
+				this.delay(2000).then(any => {
+					this.zone.run(() => {
+						this.router.navigate(['/home'], {queryParams: {'secret': 1}});
+					});
+				});
+			}
+		});
 	}
 
 	setDisplayFooter(should: boolean) {

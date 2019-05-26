@@ -30,6 +30,7 @@ import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WorkComponent } from './work/work.component';
+import { SpeechRecognitionModule } from '@kamiazya/ngx-speech-recognition';
 
 //firebase configuration for auth
 const firebaseConfig = {
@@ -70,7 +71,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    KonamiModule
+    KonamiModule,
+    SpeechRecognitionModule.forRoot({ lang: 'en-US' })
   ],
   providers: [],
   bootstrap: [AppComponent]

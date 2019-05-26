@@ -11,15 +11,14 @@ export class AboutComponent implements OnInit {
 
 	@Input() logo_dir: string = "assets/aboutme.png";
 
-	meme() {
-		//do something funny
-		console.log("meme works");
-	}
-
 	constructor(private funcs: FuncsService) {
 		//implement better way of showing and hiding padding
 		funcs.setDisplayHeaderPadding(true);
   		funcs.setDisplayFooter(true);
+	}
+
+	meme() {
+		this.funcs.listen();
 	}
 
 	ngOnInit() {}
