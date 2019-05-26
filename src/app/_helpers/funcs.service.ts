@@ -15,7 +15,18 @@ export class FuncsService {
 	memeMessage: string = "";
 
 	//need ngzone to access router from a non-component
- 	constructor(public speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {}
+ 	constructor(private speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {
+ 		/*
+			when declaring a new speech object above, mobile devices error out and will not display
+			the website as it uses apis that are not supported on mobile... the below code does not 
+			do what I was intending on making it do so I have to figure a correct fix.
+			-- MOBILE PHONE WILL NOT DISPLAY THE SITE FOR NOW --
+ 		*/
+ 		if(this.isMobile()) {
+			this.speech = null;
+			delete this.speech;
+		}
+ 	}
 
 	async delay(time: number) {
 		//remove log eventually
@@ -23,10 +34,11 @@ export class FuncsService {
 	}
 
 	listen() {
+		//let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
 		this.speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
 			this.memeMessage = list.item(0).item(0).transcript;
 			console.log(this.memeMessage);
-			if(this.memeMessage.toLowerCase().indexOf("i am silly") > -1) {
+			if(this.memeMessage.toLowerCase().indexOf("make me silly") > -1) {
 				console.log("SECRET");
 				this.delay(2000).then(any => {
 					this.zone.run(() => {
@@ -76,4 +88,5 @@ export class FuncsService {
  			|| /Windows Phone/i.test(navigator.userAgent)
  		);
 	}
+
 }
