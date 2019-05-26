@@ -11,6 +11,7 @@ export class FuncsService {
 
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
+	private useColorSwitcher: boolean = false;
 	private navColorCode: string = "#007bff";
 
 	memeMessage: string = "";
@@ -35,9 +36,9 @@ export class FuncsService {
 	}
 
 	listen() {
-		let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
-		if(!this.isMobile()) {
-			this.speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
+		if(this.isMobile() !== true) {
+			let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
+			speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
 				this.memeMessage = list.item(0).item(0).transcript;
 				console.log(this.memeMessage);
 				if(this.memeMessage.toLowerCase().indexOf("make me silly") > -1) {
@@ -81,9 +82,10 @@ export class FuncsService {
 		return null;
 	}*/
 	public cycleNavColor(comp: number) {
-		if(comp != null && comp > -1) {
+		if(comp != null && comp > -1 && this.useColorSwitcher) {
 			switch(comp) {
 				case 0:
+					//should change this to a darker blue, too light
 					this.navColorCode = "#007bff";
 				break;
 				case 1:
@@ -111,12 +113,15 @@ export class FuncsService {
 					this.navColorCode = "#007bff";
 				break;
 			}
+		} else {
+			//color when color toggler is disabled
+			this.navColorCode = "#0408B4";
 		}
 	}
 
 	public currNavBgStyler(): any {
 		//need this cuz uh color blind
-		console.log("Current color code: " + this.getRawNavColorCode());
+		//console.log("Current color code: " + this.getRawNavColorCode());
 		return {
 			'background-color': (this.navColorCode != null) ? this.navColorCode : "#007bff"
 		};
