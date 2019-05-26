@@ -37,6 +37,7 @@ export class FuncsService {
 		});
 	}
 
+	//add setter
 	setDisplayFooter(should: boolean) {
 		this.shouldDisplayFooter = should;
 	}
@@ -45,6 +46,7 @@ export class FuncsService {
 		return this.shouldDisplayFooter;
 	}
 
+	//add setter
 	setDisplayHeaderPadding(should: boolean) {
 		this.shouldDisplayHeaderPadding = should;
 	}
