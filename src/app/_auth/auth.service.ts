@@ -79,7 +79,8 @@ export class AuthService {
 		this.router.navigate(['/login']);
 	}
 
-	/* possible async so await can be used */ addContact(data: ContactData) {
+	/* possible async so await can be used */ 
+	addContact(data: ContactData) {
 		return new Promise<any>((response, reject) => {
 			this.store.collection("contact").add(data).then(res => {
 				console.log(res);
