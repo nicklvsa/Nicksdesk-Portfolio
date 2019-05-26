@@ -24,7 +24,7 @@ html, body {
 
 .bg-image {
 	max-height: 500%;
-	//removed to make home page look more alike the rest of the site
+	//removed to make home page look more like the rest of the site
 	/*background-color: #E5E8E8;*/
 	height: 100%;
 }
@@ -56,16 +56,19 @@ html, body {
 .slide-web {
 	animation-name: squash-web;
 	animation-duration: 2s;
+	height: 26%;
 }
 
 .slide-dev {
 	animation-name: squash-dev;
 	animation-duration: 2s;
+	height: 26%;
 }
 
 .slide-software {
 	animation-name: squash-software;
 	animation-duration: 2s;
+	height: 26%;
 }
 
 .jumbotron {
