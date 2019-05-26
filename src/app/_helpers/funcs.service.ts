@@ -11,24 +11,22 @@ export class FuncsService {
 
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
-
 	private navColorCode: string = "#007bff";
 
 	memeMessage: string = "";
 
 	//need ngzone to access router from a non-component
 	//the speech definition is giving weird issues on mobile cuz apis don't exist
- 	constructor(private speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {
+
+	//need to figure out how to swap out constructors
+
+ 	constructor(private router: Router, private zone: NgZone) {
  		/*
 			when declaring a new speech object above, mobile devices error out and will not display
 			the website as it uses apis that are not supported on mobile... the below code does not 
 			do what I was intending on making it do so I have to figure a correct fix.
 			-- MOBILE PHONE WILL NOT DISPLAY THE SITE FOR NOW --
  		*/
- 		if(this.isMobile()) {
-			this.speech = null;
-			delete this.speech;
-		}
  	}
 
 	async delay(time: number) {
@@ -37,19 +35,22 @@ export class FuncsService {
 	}
 
 	listen() {
-		//let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
-		this.speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
-			this.memeMessage = list.item(0).item(0).transcript;
-			console.log(this.memeMessage);
-			if(this.memeMessage.toLowerCase().indexOf("make me silly") > -1) {
-				console.log("SECRET");
-				this.delay(2000).then(any => {
-					this.zone.run(() => {
-						this.router.navigate(['/home'], {queryParams: {'secret': 1}});
+		let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
+		if(!this.isMobile()) {
+			this.speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
+				this.memeMessage = list.item(0).item(0).transcript;
+				console.log(this.memeMessage);
+				if(this.memeMessage.toLowerCase().indexOf("make me silly") > -1) {
+					this.delay(2000).then(any => {
+						this.zone.run(() => {
+							this.router.navigate(['/home'], {queryParams: {'secret': 1}});
+						});
 					});
-				});
-			}
-		});
+				}
+			});
+		} else {
+			console.log("cannot load speech to text on mobile!");
+		}
 	}
 
 	//add setter
