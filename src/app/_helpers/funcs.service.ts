@@ -14,6 +14,7 @@ export class FuncsService {
 
 	memeMessage: string = "";
 
+	//need ngzone to access router from a non-component
  	constructor(public speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {}
 
 	async delay(time: number) {
