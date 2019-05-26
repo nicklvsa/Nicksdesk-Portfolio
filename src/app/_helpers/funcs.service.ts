@@ -12,6 +12,8 @@ export class FuncsService {
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
 
+	private navColorCode: string = "#007bff";
+
 	memeMessage: string = "";
 
 	//need ngzone to access router from a non-component
@@ -77,6 +79,51 @@ export class FuncsService {
 
 		return null;
 	}*/
+	public cycleNavColor(comp: number) {
+		if(comp != null && comp > -1) {
+			switch(comp) {
+				case 0:
+					this.navColorCode = "#007bff";
+				break;
+				case 1:
+					this.navColorCode = "#0408B4";
+				break;
+				case 2:
+					this.navColorCode = "#00038B";
+				break;
+				case 3:
+					this.navColorCode = "#000378";
+				break;
+				case 4:
+					this.navColorCode = "#000368";
+				break;
+				case 5:
+					this.navColorCode = "#000250";
+				break;
+				case 6:
+					this.navColorCode = "#01023D";
+				break;
+				case 7:
+					this.navColorCode = "#000135";
+				break;
+				default:
+					this.navColorCode = "#007bff";
+				break;
+			}
+		}
+	}
+
+	public currNavBgStyler(): any {
+		//need this cuz uh color blind
+		console.log("Current color code: " + this.getRawNavColorCode());
+		return {
+			'background-color': (this.navColorCode != null) ? this.navColorCode : "#007bff"
+		};
+	}
+
+	public getRawNavColorCode(): string {
+		return (this.navColorCode != null) ? this.navColorCode : "_";
+	}
 
 	isMobile(): boolean {
  		return (

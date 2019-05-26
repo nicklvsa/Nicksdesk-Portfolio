@@ -11,6 +11,10 @@ export class FooterComponent implements OnInit {
 
   constructor(private funcs: FuncsService) { }
 
+  get getFooterColor(): any {
+  	return this.funcs.currNavBgStyler();
+  }
+
   ngOnInit() {
   }
 
