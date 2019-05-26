@@ -15,6 +15,7 @@ export class FuncsService {
 	memeMessage: string = "";
 
 	//need ngzone to access router from a non-component
+	//the speech definition is giving weird issues on mobile cuz apis don't exist
  	constructor(private speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {
  		/*
 			when declaring a new speech object above, mobile devices error out and will not display
