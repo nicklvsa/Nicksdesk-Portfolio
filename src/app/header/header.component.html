@@ -1,5 +1,6 @@
 <!-- possibly change styling of nav... just bootstra 4 as of now !-->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+<!--<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">!-->
+<nav [ngStyle]="currNavBgStyler" class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
   <a draggable="false" class="navbar-brand navbar-title-styler" routerLink="">Nick's Desk</a>
   <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,31 +8,31 @@
   <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="">Home</a>
+        <a class="nav-link" (click)="cycleNavColor(0)" routerLink="">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="resume">Resume</a>
+        <a class="nav-link" (click)="cycleNavColor(1)" routerLink="resume">Resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="philosophy">Philosophy</a>
+        <a class="nav-link" (click)="cycleNavColor(2)" routerLink="philosophy">Philosophy</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="about">About</a>
+        <a class="nav-link" (click)="cycleNavColor(3)" routerLink="about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="contact">Contact</a>
+        <a class="nav-link" (click)="cycleNavColor(4)" routerLink="contact">Contact</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Experience</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
-          <a class="dropdown-item" routerLink="skills">Skills</a>
-          <a class="dropdown-item" routerLink="work">Work</a>
+          <a class="dropdown-item" (click)="cycleNavColor(5)" routerLink="skills">Skills</a>
+          <a class="dropdown-item" (click)="cycleNavColor(6)" routerLink="work">Work</a>
         </div>
       </li>
       <li class="nav-item dropdown" ngbDropdown *ngIf="!funcs.isMobile()">
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
-          <a *ngIf="!authService.isLoggedIn; else showloggedin" class="dropdown-item" routerLink="login">Login</a>
+          <a *ngIf="!authService.isLoggedIn; else showloggedin" (click)="cycleNavColor(7)" class="dropdown-item" routerLink="login">Login</a>
           <a *ngIf="!authService.isLoggedIn" class="dropdown-item" routerLink="register">Register</a>
         </div>
       </li>
@@ -44,5 +45,5 @@
 <div *ngIf="funcs.getDisplayHeaderPadding()" class="spacer-header"></div>
 
 <ng-template #showloggedin>
-  <a class="dropdown-item" routerLink="dashboard">My Desk</a>
+  <a class="dropdown-item" (click)="cycleNavColor(7)" routerLink="dashboard">My Desk</a>
 </ng-template>
