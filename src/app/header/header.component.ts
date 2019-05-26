@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Router } from '@angular/router';
+
 import { AuthService } from '../_auth/auth.service';
 import { FuncsService } from '../_helpers/funcs.service';
 
@@ -11,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   isNavbarCollapsed: boolean = true;
 
-  constructor(private authService: AuthService, private funcs: FuncsService) {
+  constructor(private authService: AuthService, private funcs: FuncsService, private router: Router) {
     console.log("Mobile: " + funcs.isMobile());
   }
 
