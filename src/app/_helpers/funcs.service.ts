@@ -14,7 +14,10 @@ export class FuncsService {
 	private useColorSwitcher: boolean = false;
 
 	//starting light color
-	private navColorCode: string = "#007bff";
+	//private navColorCode: string = "#007bff";
+
+	//starting darker color
+	private navColorCode: string = "#0408B4";
 
 	private speech: any;
 
