@@ -45,6 +45,7 @@ export class FuncsService {
 
 	listen() {
 		if(this.isMobile() !== true) {
+			//needs 7 args, only providing 6 at the moment
 			let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService(null, "en", false, true, 10, "");
 			speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
 				this.memeMessage = list.item(0).item(0).transcript;
