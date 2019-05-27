@@ -12,7 +12,11 @@ export class FuncsService {
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
 	private useColorSwitcher: boolean = false;
+
+	//starting light color
 	private navColorCode: string = "#007bff";
+
+	private speech: any;
 
 	memeMessage: string = "";
 
@@ -21,7 +25,11 @@ export class FuncsService {
 
 	//need to figure out how to swap out constructors
 
- 	constructor(private router: Router, private zone: NgZone) {
+ 	constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
+ 		/*if(!this.isMobile()) {
+ 			this.speech = new RxSpeechRecognitionService();
+ 		}*/
+
  		/*
 			when declaring a new speech object above, mobile devices error out and will not display
 			the website as it uses apis that are not supported on mobile... the below code does not 
@@ -37,7 +45,7 @@ export class FuncsService {
 
 	listen() {
 		if(this.isMobile() !== true) {
-			let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService();
+			let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService(null, "en", false, true, 10, "");
 			speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
 				this.memeMessage = list.item(0).item(0).transcript;
 				console.log(this.memeMessage);
