@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Injectable, NgZone } from '@angular/core';
 
-import { RxSpeechRecognitionService, resultList } from '@kamiazya/ngx-speech-recognition';
+import { RxSpeechRecognitionService, SpeechGrammarList, resultList } from '@kamiazya/ngx-speech-recognition';
 
 @Injectable({
 	providedIn: 'root'
@@ -49,7 +49,7 @@ export class FuncsService {
 	listen() {
 		if(this.isMobile() !== true) {
 			//needs 7 args, only providing 6 at the moment
-			let speech: RxSpeechRecognitionService = new RxSpeechRecognitionService(null, "en", false, true, 10, "");
+			let speech: RxSpeechRecognitionService;
 			speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
 				this.memeMessage = list.item(0).item(0).transcript;
 				console.log(this.memeMessage);
