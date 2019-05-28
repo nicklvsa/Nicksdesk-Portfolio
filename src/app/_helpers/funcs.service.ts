@@ -28,18 +28,29 @@ export class FuncsService {
 
 	//need to figure out how to swap out constructors
 
- 	constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
- 		/*if(!this.isMobile()) {
- 			this.speech = new RxSpeechRecognitionService();
- 		}*/
+	//#ifdef MOBILE
 
- 		/*
-			when declaring a new speech object above, mobile devices error out and will not display
-			the website as it uses apis that are not supported on mobile... the below code does not 
-			do what I was intending on making it do so I have to figure a correct fix.
-			-- MOBILE PHONE WILL NOT DISPLAY THE SITE FOR NOW --
- 		*/
- 	}
+ 		constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
+
+ 			//need something similar to c++ preprocessors directives
+
+ 			/*
+				when declaring a new speech object above, mobile devices error out and will not display
+				the website as it uses apis that are not supported on mobile... the below code does not 
+				do what I was intending on making it do so I have to figure a correct fix.
+				-- MOBILE PHONE WILL NOT DISPLAY THE SITE FOR NOW --
+ 			*/
+
+ 			//if on mobile load this constructor
+ 		}
+
+ 	//#else 
+
+ 		constructor(private speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {
+ 			//else if on desktop load this constructor
+ 		}
+
+ 	//#endif
 
 	async delay(time: number) {
 		//remove log eventually
