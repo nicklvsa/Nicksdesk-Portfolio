@@ -1,7 +1,7 @@
-declare var particlesJS: any;
-
 import { Component, OnInit, Input } from '@angular/core';
 import { FuncsService } from '../_helpers/funcs.service';
+
+declare var particlesJS: any;
 
 @Component({
   selector: 'app-about',
@@ -24,7 +24,7 @@ export class AboutComponent implements OnInit {
 
 	ngOnInit() {
 		particlesJS.load('particles-js', 'assets/about_particles.json', () => {
-			console.log('Loaded particles!');
+  			console.log("particles loaded!");
 		});
 	}
 
