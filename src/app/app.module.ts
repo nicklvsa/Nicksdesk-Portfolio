@@ -31,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WorkComponent } from './work/work.component';
 import { SpeechRecognitionModule } from '@kamiazya/ngx-speech-recognition';
+import { BlogComponent } from './blog/blog.component';
 
 //firebase configuration for auth
 const firebaseConfig = {
@@ -59,7 +60,8 @@ const firebaseConfig = {
     PhilosophyComponent,
     FooterComponent,
     DashboardComponent,
-    WorkComponent
+    WorkComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
