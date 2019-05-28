@@ -12,6 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
 	//main routes
@@ -27,6 +28,7 @@ const routes: Routes = [
 	{path: 'philosophy', component: PhilosophyComponent},
 	{path: 'dashboard', component: DashboardComponent},
 	{path: 'work', component: WorkComponent},
+	{path: 'blog', component: BlogComponent},
 
 	//detect invalid route
 	{path: '404', component: HomeComponent},
