@@ -12,10 +12,10 @@ export class FuncsService {
 	private useColorSwitcher: boolean = false;
 
 	//starting light color
-	//private navColorCode: string = "#007bff";
+	private navColorCode: string = "#007bff";
 
 	//starting darker color
-	private navColorCode: string = "#0408B4";
+	//private navColorCode: string = "#0408B4";
 
 	memeMessage: string = "";
 
@@ -62,7 +62,7 @@ export class FuncsService {
 		return null;
 	}*/
 	public cycleNavColor(comp: number) {
-		if(comp != null && comp > -1 && this.useColorSwitcher) {
+		if(comp != null && comp > -1 && this.useColorSwitcher !== false) {
 			switch(comp) {
 				case 0:
 					//should change this to a darker blue, too light
@@ -95,7 +95,7 @@ export class FuncsService {
 			}
 		} else {
 			//color when color toggler is disabled
-			this.navColorCode = "#0408B4";
+			this.navColorCode = "#007bff";
 		}
 	}
 
