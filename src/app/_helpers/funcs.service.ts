@@ -34,13 +34,6 @@ export class FuncsService {
 
  			//need something similar to c++ preprocessors directives
 
- 			/*
-				when declaring a new speech object above, mobile devices error out and will not display
-				the website as it uses apis that are not supported on mobile... the below code does not 
-				do what I was intending on making it do so I have to figure a correct fix.
-				-- MOBILE PHONE WILL NOT DISPLAY THE SITE FOR NOW --
- 			*/
-
  			//if on mobile load this constructor
  		}
 
