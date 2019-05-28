@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Injectable, NgZone } from '@angular/core';
 
-import { RxSpeechRecognitionService, SpeechGrammarList, resultList } from '@kamiazya/ngx-speech-recognition';
+import { RxSpeechRecognitionService, resultList } from '@kamiazya/ngx-speech-recognition';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +11,7 @@ export class FuncsService {
 
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
-	private useColorSwitcher: boolean = false;
+	private useColorSwitcher: boolean = true;
 
 	//starting light color
 	//private navColorCode: string = "#007bff";
@@ -19,7 +19,7 @@ export class FuncsService {
 	//starting darker color
 	private navColorCode: string = "#0408B4";
 
-	private speech: any;
+	//private speech: any;
 
 	memeMessage: string = "";
 
@@ -30,12 +30,12 @@ export class FuncsService {
 
 	//#ifdef MOBILE
 
- 		constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
+ 		//constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
 
  			//need something similar to c++ preprocessors directives
 
  			//if on mobile load this constructor
- 		}
+ 		//}
 
  	//#else 
 
