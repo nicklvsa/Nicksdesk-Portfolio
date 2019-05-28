@@ -1,0 +1,11 @@
+{
+	"hosting": {
+		"public": "dist/nicks-desk-portfolio",
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	}
+}
