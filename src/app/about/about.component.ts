@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+declare var particlesJS: any;
 
+import { Component, OnInit, Input } from '@angular/core';
 import { FuncsService } from '../_helpers/funcs.service';
 
 @Component({
@@ -14,13 +15,17 @@ export class AboutComponent implements OnInit {
 	constructor(private funcs: FuncsService) {
 		//implement better way of showing and hiding padding
 		funcs.setDisplayHeaderPadding(true);
-  		funcs.setDisplayFooter(true);
+  		funcs.setDisplayFooter(true);  		
 	}
 
 	meme() {
 		this.funcs.listen();
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		particlesJS.load('particles-js', 'assets/about_particles.json', () => {
+			console.log('Loaded particles!');
+		});
+	}
 
 }

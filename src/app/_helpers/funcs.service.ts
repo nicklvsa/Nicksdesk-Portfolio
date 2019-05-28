@@ -28,7 +28,6 @@ export class FuncsService {
 
 	listen() {
 		if(this.isMobile() !== true) {
-			//needs 7 args, only providing 6 at the moment
 			
 		} else {
 			console.log("secrets not enabled on mobile");
