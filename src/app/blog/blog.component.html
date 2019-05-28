@@ -1,9 +1,15 @@
-<article>
+<div class="container-fluid">
+	<h2 class="display-2 centered">Blog</h2>
+	<hr class="centered"/>
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				
+		<div class="row justify-content-center">
+			<div *ngFor="let entry of entries" class="blog">
+				<div class="col-lg-8">
+					<h5>
+						{{ entry }}
+					</h5>
+				</div>
 			</div>
 		</div>
 	</div>
-</article>
+</div>
