@@ -1,8 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable, NgZone } from '@angular/core';
 
-import { RxSpeechRecognitionService, resultList } from '@kamiazya/ngx-speech-recognition';
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -11,7 +9,7 @@ export class FuncsService {
 
 	private shouldDisplayHeaderPadding: boolean = true;
 	private shouldDisplayFooter: boolean = true;
-	private useColorSwitcher: boolean = true;
+	private useColorSwitcher: boolean = false;
 
 	//starting light color
 	//private navColorCode: string = "#007bff";
@@ -19,31 +17,9 @@ export class FuncsService {
 	//starting darker color
 	private navColorCode: string = "#0408B4";
 
-	//private speech: any;
-
 	memeMessage: string = "";
 
-	//need ngzone to access router from a non-component
-	//the speech definition is giving weird issues on mobile cuz apis don't exist
-
-	//need to figure out how to swap out constructors
-
-	//#ifdef MOBILE
-
- 		//constructor(/*private speech: RxSpeechRecognitionService,*/ private router: Router, private zone: NgZone) {
-
- 			//need something similar to c++ preprocessors directives
-
- 			//if on mobile load this constructor
- 		//}
-
- 	//#else 
-
- 		constructor(private speech: RxSpeechRecognitionService, private router: Router, private zone: NgZone) {
- 			//else if on desktop load this constructor
- 		}
-
- 	//#endif
+ 	constructor(private router: Router, private zone: NgZone) {}
 
 	async delay(time: number) {
 		//remove log eventually
@@ -53,20 +29,9 @@ export class FuncsService {
 	listen() {
 		if(this.isMobile() !== true) {
 			//needs 7 args, only providing 6 at the moment
-			let speech: RxSpeechRecognitionService;
-			speech.listen().pipe(resultList).subscribe((list: SpeechRecognitionResultList) => {
-				this.memeMessage = list.item(0).item(0).transcript;
-				console.log(this.memeMessage);
-				if(this.memeMessage.toLowerCase().indexOf("make me silly") > -1) {
-					this.delay(2000).then(any => {
-						this.zone.run(() => {
-							this.router.navigate(['/home'], {queryParams: {'secret': 1}});
-						});
-					});
-				}
-			});
+			
 		} else {
-			console.log("cannot load speech to text on mobile!");
+			console.log("secrets not enabled on mobile");
 		}
 	}
 
