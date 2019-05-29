@@ -8,6 +8,7 @@ declare var particlesJS: any;
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
+
 export class AboutComponent implements OnInit {
 
 	@Input() logo_dir: string = "assets/aboutme.png";

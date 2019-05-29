@@ -1,5 +1,4 @@
 #automatic testing for my portfolio
-
 image: node:10
 
 build:
