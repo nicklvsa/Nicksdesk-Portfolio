@@ -10,7 +10,7 @@ import { FuncsService } from '../_helpers/funcs.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private funcs: FuncsService) { 
+  constructor(public funcs: FuncsService) { 
 	funcs.setDisplayFooter(false);
   	funcs.setDisplayHeaderPadding(false);
   }

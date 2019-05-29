@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   isNavbarCollapsed: boolean = true;
 
-  constructor(private authService: AuthService, private funcs: FuncsService, private router: Router) {
+  constructor(public authService: AuthService, public funcs: FuncsService, public router: Router) {
     console.log("Mobile: " + funcs.isMobile());
   }
 

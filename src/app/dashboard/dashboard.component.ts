@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 	user_str: string = "";
 	user_img: string = "";
 
-	constructor(private authService: AuthService, private router: Router, public funcs: FuncsService) {
+	constructor(public authService: AuthService, public router: Router, public funcs: FuncsService) {
 		funcs.setDisplayFooter(true);
 		funcs.setDisplayHeaderPadding(true);
 		let raw: any = JSON.parse(localStorage.getItem("user"));

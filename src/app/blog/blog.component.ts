@@ -17,9 +17,9 @@ interface BlogEntries {
 
 export class BlogComponent implements OnInit {
 
-	private entries: BlogEntries[];
+	entries: BlogEntries[];
 
-	constructor(private funcs: FuncsService, private auth: AuthService) {
+	constructor(public funcs: FuncsService, public auth: AuthService) {
 		funcs.setDisplayHeaderPadding(true);
 
 		//fill entries array

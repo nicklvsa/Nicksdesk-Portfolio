@@ -9,7 +9,7 @@ import { FuncsService } from '../_helpers/funcs.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private funcs: FuncsService) { }
+  constructor(public funcs: FuncsService) { }
 
   get getFooterColor(): any {
   	return this.funcs.currNavBgStyler();

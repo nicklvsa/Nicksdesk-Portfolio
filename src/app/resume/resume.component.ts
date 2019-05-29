@@ -12,7 +12,7 @@ import { FuncsService } from '../_helpers/funcs.service';
 
 export class ResumeComponent implements OnInit {
 
-	constructor(private modalService: NgbModal, private funcs: FuncsService) {
+	constructor(public modalService: NgbModal, public funcs: FuncsService) {
 		console.log(funcs.isMobile() ? "mobile" : "desktop");
 		funcs.setDisplayHeaderPadding(true);
 		funcs.setDisplayFooter(true);
