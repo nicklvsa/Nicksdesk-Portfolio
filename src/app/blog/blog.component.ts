@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FuncsService } from '../_helpers/funcs.service';
+import { AuthService } from '../_auth/auth.service';
+ 
 interface BlogEntries {
 	id: number;
 	title: string;
@@ -16,12 +19,17 @@ export class BlogComponent implements OnInit {
 
 	private entries: BlogEntries[];
 
-	constructor() {
-		//fetch entries
-		this.entries = [
-			{id: 1, title: "test", content: "some content"},
-			{id: 2, title: "two", content: "second content"}
-		];
+	constructor(private funcs: FuncsService, private auth: AuthService) {
+		funcs.setDisplayHeaderPadding(true);
+
+		//fill entries array
+		auth.getBlogPosts().subscribe((response) => {
+			this.entries = response.map((e) => {
+				return {
+					... e.payload.doc.data()
+				} as BlogEntries;
+			});
+		});
 	}
 
 	ngOnInit() {}

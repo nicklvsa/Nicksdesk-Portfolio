@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
 
 	constructor(private funcs: FuncsService) {
 		//implement better way of showing and hiding padding
-		funcs.setDisplayHeaderPadding(true);
+		funcs.setDisplayHeaderPadding(false);
   		funcs.setDisplayFooter(true);  		
 	}
 

@@ -91,6 +91,10 @@ export class AuthService {
 		});
 	}
 
+	getBlogPosts() {
+		return this.store.collection("blog-posts").snapshotChanges();
+	}
+
 	get isLoggedIn(): boolean {
 		const user = JSON.parse(localStorage.getItem('user'));
 		return user !== null;

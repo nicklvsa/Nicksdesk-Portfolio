@@ -5,8 +5,13 @@
 		<div class="row justify-content-center">
 			<div *ngFor="let entry of entries" class="blog">
 				<div class="col-lg-8">
+					<h3>
+						{{ entry.title }}
+					</h3>
+				</div>
+				<div class="col-lg-8">
 					<h5>
-						{{ entry }}
+						{{ entry.content }}
 					</h5>
 				</div>
 			</div>
