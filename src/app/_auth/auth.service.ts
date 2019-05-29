@@ -15,7 +15,6 @@ export interface ContactData {
 
 export interface EntryData {
 	id: number;
-	poster: string;
 	title: string;
 	content: string;
 }

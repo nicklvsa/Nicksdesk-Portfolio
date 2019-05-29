@@ -5,7 +5,6 @@ import { AuthService } from '../_auth/auth.service';
 
 interface BlogEntries {
 	id: number;
-	poster: string;
 	title: string;
 	content: string;
 }
