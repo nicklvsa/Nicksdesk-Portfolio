@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { FuncsService } from '../_helpers/funcs.service';
 import { AuthService } from '../_auth/auth.service';
- 
+
 interface BlogEntries {
 	id: number;
+	poster: string;
 	title: string;
 	content: string;
 }
@@ -30,6 +31,23 @@ export class BlogComponent implements OnInit {
 				} as BlogEntries;
 			});
 		});
+
+		//this.addPost();
+	}
+
+	addPost() {
+
+		let data: BlogEntries[] = [
+			{id: 3, title: "Some Article", content: `this is some test data and i really like eating pie testing testing testing the data`},
+			{id: 4, title: "Some Article 2", content: `this is some test data and i really like eating pie testing testing testing the data`}
+
+		];
+
+		data.forEach((each: BlogEntries) => {
+			this.auth.addBlogPost(each).then((res) => {
+				console.log(res);
+			});
+		})
 	}
 
 	ngOnInit() {}

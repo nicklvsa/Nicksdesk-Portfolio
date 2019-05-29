@@ -13,6 +13,13 @@ export interface ContactData {
   message: string;
 }
 
+export interface EntryData {
+	id: number;
+	poster: string;
+	title: string;
+	content: string;
+}
+
 @Injectable({
  	providedIn: 'root'
 })
@@ -87,6 +94,16 @@ export class AuthService {
 				return response();
 			}).catch((e) => {
 				console.log(e);
+			});
+		});
+	}
+
+	addBlogPost(data: EntryData) {
+		return new Promise<any>((response, reject) => {
+			this.store.collection('blog-posts').add(data).then(res => {
+				return response();
+			}).catch((e) => {
+				console.log(e)
 			});
 		});
 	}
