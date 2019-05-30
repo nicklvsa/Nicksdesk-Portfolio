@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
 import { FuncsService } from '../_helpers/funcs.service';
 import { AuthService } from '../_auth/auth.service';
 
@@ -17,9 +19,13 @@ interface BlogEntries {
 
 export class BlogComponent implements OnInit {
 
-	entries: BlogEntries[];
+	contentField: string;
+	titleField: string;
 
-	constructor(public funcs: FuncsService, public auth: AuthService) {
+	entries: BlogEntries[];
+	showAddPostButton: boolean = false;
+
+	constructor(public modalService: NgbModal, public funcs: FuncsService, public auth: AuthService) {
 		funcs.setDisplayHeaderPadding(true);
 
 		//fill entries array
@@ -31,22 +37,42 @@ export class BlogComponent implements OnInit {
 			});
 		});
 
+		if(localStorage.getItem("user") != null && JSON.parse(localStorage.getItem("user")) !== null) {
+			let email: string = JSON.parse(localStorage.getItem("user")).email;
+			if(email === "nick@charliesdesk.com") {
+				this.showAddPostButton = true;
+			} else {
+				this.showAddPostButton = false;
+			}
+		}
+
 		//this.addPost();
 	}
 
-	addPost() {
+	createNewPost(showaddpost) {
+		this.modalService.open(showaddpost, {ariaLabelledBy: 'blog-modal-title', windowClass: 'modal-anim', size: 'lg'});
+	}
+
+	addPostClick() {
+		let random = Math.floor(Math.random() * 10000) + 1;
+		this.addPost({id: random, title: this.titleField, content: this.contentField});
+	}
+
+	addPost(input: BlogEntries) {
 
 		let data: BlogEntries[] = [
-			{id: 3, title: "Some Article", content: `this is some test data and i really like eating pie testing testing testing the data`},
-			{id: 4, title: "Some Article 2", content: `this is some test data and i really like eating pie testing testing testing the data`}
-
+			input
 		];
 
 		data.forEach((each: BlogEntries) => {
 			this.auth.addBlogPost(each).then((res) => {
 				console.log(res);
 			});
-		})
+		});
+	}
+
+	shouldShowAdminControls(): boolean {
+		return this.showAddPostButton && !this.funcs.isMobile();
 	}
 
 	ngOnInit() {}

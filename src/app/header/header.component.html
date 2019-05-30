@@ -25,13 +25,10 @@
       <li class="nav-item">
         <a class="nav-link" [class.active]="router.url==='/contact'" (click)="cycleNavColor(5)" routerLink="contact">Contact</a>
       </li>
-      <li class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Experience</a>
-        <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
-          <a class="dropdown-item" [class.active]="router.url==='/skills'" (click)="cycleNavColor(6)" routerLink="skills">Skills</a>
-          <a class="dropdown-item" [class.active]="router.url==='/work'" (click)="cycleNavColor(7)" routerLink="work">Work</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="router.url==='/skills'" (click)="cycleNavColor(6)" routerLink="skills">Skills</a>
       </li>
+
       <li class="nav-item dropdown" ngbDropdown *ngIf="!funcs.isMobile()">
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
