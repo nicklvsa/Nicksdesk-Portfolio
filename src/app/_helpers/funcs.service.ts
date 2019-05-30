@@ -23,7 +23,7 @@ export class FuncsService {
 
 	async delay(time: number) {
 		//remove log eventually
-		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("pause finished!"));
+		await new Promise(resolve => setTimeout(() => resolve(), time)).then(() => console.log("Pause completed!"));
 	}
 
 	listen() {

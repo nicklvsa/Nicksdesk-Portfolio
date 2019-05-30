@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 		}
 		if(raw != null) {
 			this.user_str = (raw.email == null || raw.email == "") ? raw.displayName : raw.email;
-			this.user_img = (raw.photoURL == null || raw.photoURL == "") ? "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" : raw.photoURL;
+			this.user_img = (raw.photoURL == null || raw.photoURL == "") ? "assets/defaultprofile.png" : raw.photoURL;
 		} else {
 			this.user_str = "";
 			this.user_img = "";

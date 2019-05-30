@@ -37,6 +37,7 @@ export class BlogComponent implements OnInit {
 			});
 		});
 
+		//check if logged in user is admin
 		if(localStorage.getItem("user") != null && JSON.parse(localStorage.getItem("user")) !== null) {
 			let email: string = JSON.parse(localStorage.getItem("user")).email;
 			if(email === "nick@charliesdesk.com") {
@@ -46,6 +47,7 @@ export class BlogComponent implements OnInit {
 			}
 		}
 
+		//testing addPost function
 		//this.addPost();
 	}
 
@@ -54,8 +56,8 @@ export class BlogComponent implements OnInit {
 	}
 
 	addPostClick() {
-		let random = Math.floor(Math.random() * 10000) + 1;
-		this.addPost({id: random, title: this.titleField, content: this.contentField});
+		let identifier: number = this.getRandomIdentifier();
+		this.addPost({id: identifier, title: this.titleField, content: this.contentField});
 	}
 
 	addPost(input: BlogEntries) {
@@ -74,6 +76,11 @@ export class BlogComponent implements OnInit {
 
 	shouldShowAdminControls(): boolean {
 		return this.showAddPostButton && !this.funcs.isMobile();
+	}
+
+	getRandomIdentifier(): number {
+		return Math.floor(Math.random() * 10000) + 1;
+
 	}
 
 	ngOnInit() {}

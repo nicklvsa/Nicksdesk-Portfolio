@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
 		funcs.setDisplayFooter(true);
 	}
 
-	ngOnInit() {}
-
 	loginTwitter() {
 		this.authService.loginWithTwitter();
 	}
@@ -31,5 +29,7 @@ export class LoginComponent implements OnInit {
 	loginComp() {
 		this.authService.login(this.email, this.password);
 	}
+
+	ngOnInit() {}
 
 }

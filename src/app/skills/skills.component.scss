@@ -2,13 +2,30 @@
 	padding-bottom: 15rem;
 }
 
+.container-fluid {
+	padding-top: 6rem;
+}
+
 .card {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	transition: box-shadow 0.3s ease-in-out;
 }
 
+.slanted {
+	font-style: italic;
+}
+
 .card:hover {
 	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.tabbed-border {
+	border-bottom: 8px solid #007bff;
+}
+
+.text-left {
+	font-style: italic;
+	padding-top: 10px;
 }
 
 .skills-img {
@@ -16,6 +33,9 @@
 	width: 325px;
 	max-width: 100%;
 	max-height: 100%;
+	animation-name: bounce-in;
+	animation-duration: 2.0s;
+	animation-timing-function: ease-in-out;
 }
 
 @media screen and (max-width: 640px) {
@@ -25,4 +45,22 @@
 		max-width: 100%;
 		max-height: 100%;
 	}
+}
+
+@keyframes bounce-in {
+	 0%   { 
+	 	transform: scale(1,1) translateY(0); 
+	 }
+     10%  { 
+     	transform: scale(1.1,.9) translateY(0); 
+     }
+     30%  { 
+     	transform: scale(.9,1.1) translateY(-100px); 
+     }
+     50%  { 
+     	transform: scale(1,1) translateY(0); 
+     }
+     100% { 
+     	transform: scale(1,1) translateY(0); 
+     }
 }
