@@ -60,6 +60,7 @@ export class BlogComponent implements OnInit {
 
 	addPost(input: BlogEntries) {
 
+		//this could allow multiple BlogEntries
 		let data: BlogEntries[] = [
 			input
 		];
