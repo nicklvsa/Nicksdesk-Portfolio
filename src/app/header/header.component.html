@@ -23,12 +23,11 @@
         <a class="nav-link" [class.active]="router.url==='/blog'" (click)="cycleNavColor(4)" routerLink="blog">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [class.active]="router.url==='/contact'" (click)="cycleNavColor(5)" routerLink="contact">Contact</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" [class.active]="router.url==='/skills'" (click)="cycleNavColor(6)" routerLink="skills">Skills</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="router.url==='/contact'" (click)="cycleNavColor(5)" routerLink="contact">Contact</a>
+      </li>
       <li class="nav-item dropdown" ngbDropdown *ngIf="!funcs.isMobile()">
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
