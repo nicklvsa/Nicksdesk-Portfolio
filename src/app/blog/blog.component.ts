@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
 		});
 
 		//check if logged in user is admin
-		if(localStorage.getItem("user") != null && JSON.parse(localStorage.getItem("user")) !== null) {
+		if(localStorage.getItem("user") !== null && JSON.parse(localStorage.getItem("user")) !== null) {
 			let email: string = JSON.parse(localStorage.getItem("user")).email;
 			if(email === "nick@charliesdesk.com") {
 				this.showAddPostButton = true;

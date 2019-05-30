@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Directive, Input, HostListener, HostBinding, OnInit} from '@angular/core';
+import { Component, OnInit, Input, Directive, HostListener, HostBinding} from '@angular/core';
 import { FuncsService } from '../_helpers/funcs.service';
 
 declare var particlesJS: any;

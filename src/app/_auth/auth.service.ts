@@ -118,6 +118,7 @@ export class AuthService {
 
 	get getUserRecognizableIdentifier(): string {
 		//really long string to find a value to indentify logged in user
+		//prob should change this to something more normal
 		return (JSON.parse(localStorage.getItem("user")) !== null && JSON.parse(localStorage.getItem("user")).email !== null && JSON.parse(localStorage.getItem("user")).email !== "") ? JSON.parse(localStorage.getItem("user")).email : JSON.parse(localStorage.getItem("user")).displayName;
 	}
 
