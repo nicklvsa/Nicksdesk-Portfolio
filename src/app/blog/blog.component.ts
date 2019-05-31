@@ -19,6 +19,8 @@ interface BlogEntries {
 
 export class BlogComponent implements OnInit {
 
+	blog_placement: string = "bottom";
+
 	contentField: string;
 	titleField: string;
 

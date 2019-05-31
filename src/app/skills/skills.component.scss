@@ -19,12 +19,27 @@
 	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.ngbTabLink {
+	color: #000000;
+}
+
+.ngbTabLink:hover {
+	text-decoration: none;
+	color: #CDC7C2;
+}
+
+.jumbotron {
+	padding-top: 2rem;
+	background-color: #ffffff;
+}
+
 .tabbed-border {
+	border: 1px solid #dee2e6;
+	border-radius: 10px;
 	border-bottom: 8px solid #007bff;
 }
 
 .text-left {
-	font-style: italic;
 	padding-top: 10px;
 }
 

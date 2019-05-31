@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="container col-md-4">
-		<h2 [ngbTooltip]="blogTooltip" placement="right" class="blog-title display-2 centered">Blog</h2>
+		<h2 *ngIf="!funcs.isMobile(); else mobileblogtitle" [ngbTooltip]="blogTooltip" placement="{{ blog_placement }}" class="blog-title display-2 centered">Blog</h2>
 	</div>
 	<hr class="centered"/>
 	<div *ngIf="shouldShowAdminControls()">
@@ -24,6 +24,10 @@
 		</div>
 	</div>
 </div>
+
+<ng-template #mobileblogtitle>
+	<h2 class="blog-title display-2 centered">Blog</h2>
+</ng-template>
 
 <ng-template #blogTooltip>
 	<div class="container">
