@@ -9,12 +9,11 @@ import { FuncsService } from '../_helpers/funcs.service';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor(private funcs: FuncsService) { 
-  	funcs.setDisplayHeaderPadding(false);
-  	funcs.setDisplayFooter(true);
-  }
+	constructor(private funcs: FuncsService) { 
+		funcs.setDisplayHeaderPadding(false);
+		funcs.setDisplayFooter(true);
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {}
 
 }

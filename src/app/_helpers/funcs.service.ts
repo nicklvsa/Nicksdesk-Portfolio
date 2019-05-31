@@ -61,6 +61,11 @@ export class FuncsService {
 
 		return null;
 	}*/
+
+	public internalRoute(route: string, to: string) {
+		this.router.navigate([route], {fragment: to});
+	}
+
 	public cycleNavColor(comp: number) {
 		if(comp != null && comp > -1 && this.useColorSwitcher !== false) {
 			switch(comp) {
