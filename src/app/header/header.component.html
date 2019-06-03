@@ -32,7 +32,7 @@
         <a class="nav-link dropdown-toggle" id="account_dd" ngbDropdownToggle>Account</a>
         <div class="dropdown-menu" aria-labevlledby="account_dd" ngbDropdownMenu>
           <a *ngIf="!authService.isLoggedIn; else showloggedin" [class.active]="router.url==='/login'" (click)="cycleNavColor(7)" class="dropdown-item" routerLink="login">Login</a>
-          <a *ngIf="!authService.isLoggedIn" class="dropdown-item" routerLink="register">Register</a>
+          <!--<a *ngIf="!authService.isLoggedIn" class="dropdown-item" routerLink="register">Register</a>!-->
         </div>
       </li>
       <li *ngIf="authService.isLoggedIn" class="nav-item">

@@ -9,6 +9,10 @@
 	cursor: context-menu;
 }
 
+#account_dd:hover {
+	cursor: pointer;
+}
+
 .logout-hover:hover {
 	cursor: pointer;
 }
@@ -17,10 +21,6 @@
 	font-weight: bold;
 	animation-name: nav-active-shaker;
 	animation-duration: 0.3s;
-}
-
-#account_dd:hover {
-	cursor: pointer;
 }
 
 .spacer-header {
